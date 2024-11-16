@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Web App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Grocery-Web App</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>Welcome to Grocery-Web App</h2>
+        <p>Shop a wide range of products from the comfort of your home.</p>
+        <button onclick="alert('Start Shopping!')">Start Shopping</button>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <h2>Categories</h2>
+        <div class="category-list">
+            <div class="category-item">Fruits</div>
+            <div class="category-item">Vegetables</div>
+            <div class="category-item">Snacks</div>
+            <div class="category-item">Beverages</div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>© 2024 Grocery-Web App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
