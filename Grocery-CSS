@@ -1,98 +1,120 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #333;
-}
+// General Styles
+const setGeneralStyles = () => {
+    document.body.style.fontFamily = "Arial, sans-serif";
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.boxSizing = "border-box";
+    document.body.style.color = "#333";
+};
 
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-}
+// Header Styles
+const styleHeader = () => {
+    const header = document.querySelector(".header");
+    header.style.display = "flex";
+    header.style.justifyContent = "space-between";
+    header.style.alignItems = "center";
+    header.style.padding = "10px 20px";
+    header.style.backgroundColor = "#4caf50";
+    header.style.color = "white";
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.style.listStyle = "none";
+    navLinks.style.display = "flex";
+    navLinks.style.gap = "15px";
 
-.nav-links li {
-    display: inline;
-}
+    const navItems = navLinks.querySelectorAll("li");
+    navItems.forEach((item) => {
+        item.style.display = "inline";
+    });
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
+    const navLinksAnchor = navLinks.querySelectorAll("a");
+    navLinksAnchor.forEach((link) => {
+        link.style.textDecoration = "none";
+        link.style.color = "white";
+        link.style.fontWeight = "bold";
+    });
+};
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f0f0f0;
-}
+// Hero Section Styles
+const styleHeroSection = () => {
+    const hero = document.querySelector(".hero");
+    hero.style.textAlign = "center";
+    hero.style.padding = "50px 20px";
+    hero.style.backgroundColor = "#f0f0f0";
 
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
+    const heroHeading = hero.querySelector("h2");
+    heroHeading.style.fontSize = "2.5rem";
+    heroHeading.style.marginBottom = "10px";
 
-.hero button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-}
+    const heroButton = hero.querySelector("button");
+    heroButton.style.padding = "10px 20px";
+    heroButton.style.backgroundColor = "#4caf50";
+    heroButton.style.border = "none";
+    heroButton.style.color = "white";
+    heroButton.style.cursor = "pointer";
+    heroButton.style.fontSize = "1rem";
+    heroButton.style.borderRadius = "5px";
 
-.hero button:hover {
-    background-color: #45a049;
-}
+    heroButton.addEventListener("mouseover", () => {
+        heroButton.style.backgroundColor = "#45a049";
+    });
 
-/* Categories */
-.categories {
-    padding: 20px;
-    background-color: #fff;
-}
+    heroButton.addEventListener("mouseout", () => {
+        heroButton.style.backgroundColor = "#4caf50";
+    });
+};
 
-.categories h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
+// Categories Section Styles
+const styleCategories = () => {
+    const categories = document.querySelector(".categories");
+    categories.style.padding = "20px";
+    categories.style.backgroundColor = "#fff";
 
-.category-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+    const categoriesHeading = categories.querySelector("h2");
+    categoriesHeading.style.textAlign = "center";
+    categoriesHeading.style.marginBottom = "20px";
 
-.category-item {
-    padding: 15px 25px;
-    background-color: #4caf50;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    const categoryList = categories.querySelector(".category-list");
+    categoryList.style.display = "flex";
+    categoryList.style.justifyContent = "center";
+    categoryList.style.gap = "20px";
+    categoryList.style.flexWrap = "wrap";
 
-.category-item:hover {
-    background-color: #45a049;
-}
+    const categoryItems = categoryList.querySelectorAll(".category-item");
+    categoryItems.forEach((item) => {
+        item.style.padding = "15px 25px";
+        item.style.backgroundColor = "#4caf50";
+        item.style.color = "white";
+        item.style.borderRadius = "5px";
+        item.style.cursor = "pointer";
 
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-}
+        item.addEventListener("mouseover", () => {
+            item.style.backgroundColor = "#45a049";
+        });
+
+        item.addEventListener("mouseout", () => {
+            item.style.backgroundColor = "#4caf50";
+        });
+    });
+};
+
+// Footer Styles
+const styleFooter = () => {
+    const footer = document.querySelector(".footer");
+    footer.style.textAlign = "center";
+    footer.style.padding = "10px";
+    footer.style.backgroundColor = "#333";
+    footer.style.color = "white";
+};
+
+// Apply all styles
+const applyStyles = () => {
+    setGeneralStyles();
+    styleHeader();
+    styleHeroSection();
+    styleCategories();
+    styleFooter();
+};
+
+// Execute the style application after DOM content loads
+document.addEventListener("DOMContentLoaded", applyStyles);
